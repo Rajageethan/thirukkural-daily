@@ -146,6 +146,10 @@ h1 {
     line-height: 1.4;
     font-weight: 600;
     margin: 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 /* First line centered */
@@ -297,10 +301,17 @@ p {
         padding: 60px 0 30px;
     }
     .tamil {
-        padding: 40px 20px;
-        margin: 30px 0;
+        padding: 20px 15px;
+        margin: 20px 0;
+        overflow: hidden;
     }
-    .tamil h2 { font-size: 28px; }
+    .tamil h2 { 
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 10px;
+    }
     .kural-number {
         margin: 30px 0;
     }
