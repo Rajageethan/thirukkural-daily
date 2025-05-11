@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ta" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தினக் குறள் - Kural of the Day</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+        </svg>
+        <span class="toggle-text">Toggle Theme</span>
+    </button>
+    <div class="container">
+        <h1>தினக் குறள் – Kural of the Day</h1>
+        
+        <div class="kural-number">
+            <div class="number-display">
+                <span class="label">குறள் எண் - Kural Number</span>
+                <span id="number" class="number"></span>
+                <!-- <span class="label-en">Kural Number</span> -->
+            </div>
+        </div>
+
+        <div class="categories">
+            <div class="section">
+                <p><strong>Section (பால்):</strong> <span id="paul_name"></span></p>
+                <p><strong>Section Transliteration:</strong> <span id="paul_transliteration"></span></p>
+                <p><strong>Section Translation:</strong> <span id="paul_translation"></span></p>
+            </div>
+
+            <div class="chapter">
+                <p><strong>Chapter (அதிகாரம்):</strong> <span id="adikaram_name"></span></p>
+                <p><strong>Chapter Transliteration:</strong> <span id="adikaram_transliteration"></span></p>
+                <p><strong>Chapter Translation:</strong> <span id="adikaram_translation"></span></p>
+            </div>
+
+            <div class="part">
+                <p><strong>Part (இயல்):</strong> <span id="iyal_name"></span></p>
+                <p><strong>Part Transliteration:</strong> <span id="iyal_transliteration"></span></p>
+                <p><strong>Part Translation:</strong> <span id="iyal_translation"></span></p>
+            </div>
+        </div>
+
+        <div class="tamil">
+            <h2 id="line1"></h2>
+            <h2 id="line2"></h2>
+        </div>
+        
+        <div class="translations">
+            <p><strong>Translation:</strong> <span id="translation"></span></p>
+            <p><strong>Couplet:</strong> <span id="couplet"></span></p>
+            <p><strong>Explanation:</strong> <span id="explanation"></span></p>
+        </div>
+
+        <div class="transliterations">
+            <p><strong>Transliteration:</strong></p>
+            <div class="transliteration-lines">
+                <p id="transliteration1"></p>
+                <p id="transliteration2"></p>
+            </div>
+        </div>
+
+        <div class="tamil-explanations">
+            <p><strong>மு.வ விளக்கம்:</strong> <span id="mv"></span></p>
+            <p><strong>சாலமன் பாப்பையா விளக்கம்:</strong> <span id="sp"></span></p>
+            <p><strong>மு.க விளக்கம்:</strong> <span id="mk"></span></p>
+        </div>
+
+        <div class="project-info">
+            <h2>About Thirukkural Daily</h2>
+            <p>This is a personal project where I share one Thirukkural couplet each day, with its Tamil text, transliteration, translation, and explanations from scholars.</p>
+            <p>Thirukkural is a classic Tamil text with 1,330 couplets, offering timeless wisdom on ethics, wealth, and love. It is one of the most important works in Tamil literature.</p>
+            <h3>Contribute</h3>
+            <p>This project is open source. You can contribute, report issues, or suggest improvements on <a href="https://github.com/YOURNAME/thirukkural-daily" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

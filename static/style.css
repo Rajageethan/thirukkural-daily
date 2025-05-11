@@ -1,0 +1,403 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&family=SF+Pro+Display:wght@300;400;500;600&display=swap');
+
+:root {
+    /* Dark theme variables */
+    --bg-color: #000000;
+    --text-color: #f5f5f7;
+    --secondary-text: #86868b;
+    --accent: #2997ff;
+    --section-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1d1d1f;
+    --secondary-text: #515154;
+    --accent: #0066cc;
+    --section-bg: rgba(0, 0, 0, 0.02);
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.47059;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 60px;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header styling */
+h1 {
+    font-family: 'Noto Sans Tamil', -apple-system, sans-serif;
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin: 0;
+    padding: 120px 0 40px;
+    text-align: center;
+}
+
+/* Dark mode only gradient */
+:root[data-theme="dark"] h1 {
+    background: linear-gradient(180deg, var(--text-color) 0%, rgba(245, 245, 247, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.kural-number {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-display {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.number-display .label {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-size: 18px;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.number-display .number {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 5px 0;
+}
+
+.number-display .label-en {
+    font-size: 14px;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 5px;
+}
+
+/* Add subtle hover effect */
+.number-display:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 734px) {
+    .number-display {
+        padding: 15px 30px;
+    }
+    
+    .number-display .number {
+        font-size: 48px;
+    }
+    
+    .number-display .label {
+        font-size: 16px;
+    }
+}
+
+/* Main Kural display */
+.tamil {
+    background: var(--section-bg);
+    padding: 80px 40px;
+    margin: 40px 0;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.tamil h2 {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-size: 38px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+/* First line centered */
+.tamil h2:first-of-type {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Second line left aligned with some indent */
+.tamil h2:last-of-type {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Dark mode only gradient for tamil section */
+:root[data-theme="dark"] .tamil h2 {
+    background: linear-gradient(180deg, var(--text-color) 0%, rgba(245, 245, 247, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Content sections */
+.translations, .transliterations, .tamil-explanations {
+    background: var(--card-bg);
+    padding: 40px;
+    margin: 24px 0;
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0 0 60px;
+}
+
+.section, .chapter, .part {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+strong {
+    color: var(--accent);
+    font-size: 12px;
+    line-height: 1.33337;
+    letter-spacing: -.01em;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Typography */
+p {
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    margin: 0.8em 0;
+}
+
+#translation, #explanation, #couplet {
+    font-size: 21px;
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+}
+
+.tamil-explanations {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+/* Project description section */
+.project-info {
+    margin: 120px 0;
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.project-info h2 {
+    font-size: 48px;
+    line-height: 1.08349;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    margin-bottom: 40px;
+}
+
+/* Dark mode only gradient for project info heading */
+:root[data-theme="dark"] .project-info h2 {
+    background: linear-gradient(180deg, var(--text-color) 0%, rgba(245, 245, 247, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-info p {
+    font-size: 21px;
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    color: var(--secondary-text);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.project-info a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-info a:hover {
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tamil, .translations, .transliterations, .tamil-explanations, .categories > div {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1068px) {
+    h1 { font-size: 48px; }
+    .tamil h2 { font-size: 32px; }
+    #translation, #explanation, #couplet { font-size: 19px; }
+    .project-info h2 { font-size: 40px; }
+    .project-info p { font-size: 19px; }
+}
+
+@media only screen and (max-width: 734px) {
+    h1 { 
+        font-size: 40px;
+        padding: 60px 0 30px;
+    }
+    .tamil {
+        padding: 40px 20px;
+        margin: 30px 0;
+    }
+    .tamil h2 { font-size: 28px; }
+    .kural-number {
+        margin: 30px 0;
+    }
+    .categories {
+        grid-template-columns: 1fr;
+        margin: 0 0 40px;
+        gap: 16px;
+    }
+    .section, .chapter, .part {
+        padding: 20px;
+    }
+    .translations, .transliterations, .tamil-explanations {
+        padding: 30px;
+    }
+    .project-info {
+        margin: 80px 0;
+        padding: 60px 0;
+    }
+    .project-info h2 { font-size: 32px; }
+    .project-info p { font-size: 17px; }
+}
+
+/* Selection styling */
+::selection {
+    background: var(--accent);
+    color: var(--bg-color);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles */
+*:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: var(--section-bg);
+}
+
+.theme-toggle svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-color);
+}
+
+.transliterations span {
+    white-space: pre-line;
+    display: block;
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+.transliterations p {
+    margin: 0;
+}
+
+.transliteration-lines {
+    margin-top: 15px;
+}
+
+.transliteration-lines p {
+    font-size: 21px;
+    line-height: 1.6;
+    margin: 8px 0;
+    padding-left: 10px;
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 734px) {
+    .transliteration-lines p {
+        font-size: 18px;
+    }
+}
+
